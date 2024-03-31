@@ -49,15 +49,6 @@ def alerts():
     alerts = [doc.to_dict() for doc in alerts_query]
     return render_template('alerts.html', alerts=alerts[0].get('alerts'))
 
-@app.route('/edit_services')
-def edit_services():
-    global email
-    print(email)
-    templeData = db.collection('Temples').where(filter=FieldFilter('adminEmail', '==', email)).stream()
-    Data = [doc.to_dict() for doc in templeData]
-    print(Data)
-    return render_template('edit_services.html', pujas=Data[0].get('Puja'), darshans=Data[0].get('Darshan'),)
-
 @app.route('/view_services')
 def view_services():
     global email
@@ -75,13 +66,9 @@ def editServices():
 def edit_details():
     return render_template('edit_details.html')
 
-@app.route('/settings')
-def settings():
-    return render_template('settings.html')
-
 @app.route('/logout')
 def logout():
-    return redirect(url_for('/'))
+    return redirect(url_for('index'))
 
 
 @app.route('/add_alert', methods=['POST'])

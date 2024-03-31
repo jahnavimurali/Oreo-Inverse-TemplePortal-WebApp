@@ -6,38 +6,40 @@
     <title>Temple Dashboard</title>
     <style>
       body {
-          font-family: 'Arial', sans-serif;
-          margin: 0;
-          padding: 0;
-          display: flex;
-      }
-      .sidebar {
-          width: 250px;
-          background-color: #DC4F00;
-          height: 100vh;
-          padding: 20px;
-          color: white;
-          display: flex; /* This line is crucial */
-          flex-direction: column; /* Ensures vertical stacking */
-      }
-      .sidebar h1 {
-          margin: 0;
-          padding: 10px 0;
-          font-size: 24px;
-      }
-      .menu div, .menu a {
-          padding: 10px 0;
-          cursor: pointer;
-          color: white;
-          text-decoration: none;
-      }
-      /* .menu div:hover, .menu a:hover {
-          background-color: #FFDEAB;
-      } */
-      .main-content {
-          flex-grow: 1;
-          padding: 20px;
-      }
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4; /* Soft background color */
+    }
+
+    .sidebar {
+        width: 250px;
+        background-color: #333; /* Darker for contrast */
+        height: 100vh;
+        padding: 20px;
+        color: white;
+    }
+
+    .sidebar h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        margin: 5px 0;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .menu a:hover {
+        background-color: #555; /* Hover effect */
+    }
+
   </style>  
 </head>
 <body>
@@ -47,9 +49,6 @@
         <div><a href="{{ url_for('alerts') }}">Alerts</a></div>
         <div><a href="{{ url_for('view_services') }}">View Services</a></div>
         <div><a href="{{ url_for('editServices') }}">Edit Services</a></div>
-        <div><a href="{{ url_for('edit_services') }}">Edit services</a></div>
-        <div><a  href="{{ url_for('edit_details') }}">Edit details</a></div>
-        <div><a href="{{ url_for('settings') }}">Settings</a></div>
         <div><a href="{{ url_for('logout') }}">Log out</a></div>
     </div>
 </div>

@@ -5,39 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temple Dashboard</title>
     <style>
-      body {
-          font-family: 'Arial', sans-serif;
-          margin: 0;
-          padding: 0;
-          display: flex;
-      }
-      .sidebar {
-          width: 250px;
-          background-color: #DC4F00;
-          height: 100vh;
-          padding: 20px;
-          color: white;
-          display: flex; /* This line is crucial */
-          flex-direction: column; /* Ensures vertical stacking */
-      }
-      .sidebar h1 {
-          margin: 0;
-          padding: 10px 0;
-          font-size: 24px;
-      }
-      .menu div, .menu a {
-          padding: 10px 0;
-          cursor: pointer;
-          color: white;
-          text-decoration: none;
-      }
-      /* .menu div:hover, .menu a:hover {
-          background-color: #FFDEAB;
-      } */
-      .main-content {
-          flex-grow: 1;
-          padding: 20px;
-      }
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4; /* Soft background color */
+    }
+
+    .sidebar {
+        width: 250px;
+        background-color: #333; /* Darker for contrast */
+        height: 100vh;
+        padding: 20px;
+        color: white;
+    }
+
+    .sidebar h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        margin: 5px 0;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .menu a:hover {
+        background-color: #555; /* Hover effect */
+    }
+
+    .main-content {
+        flex-grow: 1;
+        padding: 40px;
+        background-color: #F9F9F9; /* Light background for the content area */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #DDD; /* Light border for each row */
+    }
+
+    th {
+        background-color: #394B59; /* Darker header row */
+        color: white;
+    }
+
+    /* Form styling */
+    form {
+        margin-top: 20px;
+        background-color: #FFF;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    }
+
+    input[type="text"] {
+        width: calc(100% - 22px); /* Full width minus padding and border */
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #CCC; /* Light border */
+    }
+
+    button {
+        background-color: #5D6D7E; /* Subtle button color */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #6E7B8A; /* Darker shade on hover */
+    }
   </style>  
 </head>
 <body>
@@ -47,9 +102,6 @@
         <div><a href="{{ url_for('alerts') }}">Alerts</a></div>
         <div><a href="{{ url_for('view_services') }}">View Services</a></div>
         <div><a href="{{ url_for('editServices') }}">Edit Services</a></div>
-        <div><a href="{{ url_for('edit_services') }}">Edit services</a></div>
-        <div><a  href="{{ url_for('edit_details') }}">Edit details</a></div>
-        <div><a href="{{ url_for('settings') }}">Settings</a></div>
         <div><a href="{{ url_for('logout') }}">Log out</a></div>
     </div>
 </div>
