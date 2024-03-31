@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Dashboard</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          
+      }
+      .sidebar {
+          width: 250px;
+          background-color: #DC4F00;
+          height: 100vh;
+          padding: 20px;
+          color: white;
+          display: flex;
+          flex-direction: column; 
+      }
+      .sidebar h1 {
+          margin: 0;
+          padding: 10px 0;
+          font-size: 24px;
+      }
+      .menu div, .menu a {
+          padding: 10px 0;
+          cursor: pointer;
+          color: white;
+          text-decoration: none;
+      }
+      .main-content {
+          flex-grow: 1;
+          padding: 20px;
+      }
+        .form-card {
+            display: flex;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #DCDCDC;
+            box-shadow: 0px 0px 10px #DCDCDC;
+            border-radius: 5px;
+            background-color: white;
+            flex-basis: 45%;
+            flex-wrap: wrap;
+            flex-direction: row;
+            
+        }
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        h3 {
+            color: #DC4F00;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, textarea, button {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+        }
+        button {
+            background-color: #DC4F00;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #bf4500;
+        }
+        
+  </style>  
+</head>
+<body>
+<div class="sidebar">
+    <div class="menu">
+        <div><a href="{{ url_for('dashboard') }}">Dashboard</a></div>
+        <div><a href="{{ url_for('alerts') }}">Alerts</a></div>
+        <div><a href="{{ url_for('edit_services') }}">Edit services</a></div>
+        <div><a href="{{ url_for('editServices') }}">Edit Services</a></div>
+        <div><a  href="{{ url_for('edit_details') }}">Edit details</a></div>
+        <div><a href="{{ url_for('settings') }}">Settings</a></div>
+        <div><a href="{{ url_for('logout') }}">Log out</a></div>
+    </div>
+</div>
+
+<div class="main-content">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit Services</title>
+    </head>
+    <h1>Edit Services</h1>
+    <div class="form-container">
+        <div class="form-card">
+            <h3>Add New Darshan</h3>
+            <form action="/add_darshan" method="post" id="darshanForm">
+            <label for="darshanName">Darshan Name:</label><br>
+            <input type="text" id="darshanName" name="darshanName" required><br>
+            <label for="darshanDesc">Description:</label><br>
+            <textarea id="darshanDesc" name="darshanDesc" required></textarea><br>
+            <label for="darshanFee">Darshan Fee</label><br>
+            <input type="number" id="darshanFee" name="darshanFee" required><br>
+
+            <h4>Slots</h4>
+            <div id="slotsContainer">
+            </div>
+            <button type="button" onclick="addSlot()">Add Slot</button><br><br>
+            <button type="submit">Add Darshan</button>
+            </form>
+        </div>
+        <div class="form-card">
+                <h3>Add New Puja</h3>
+                <form action="/add_puja" method="post" id="pujaForm">
+                <label for="pujaName">Puja Name:</label><br>
+                <input type="text" id="pujaName" name="pujaName" required><br>
+                <label for="pujaDesc">Description:</label><br>
+                <textarea id="pujaDesc" name="pujaDesc" required></textarea><br>
+                <label for="pujaFee">Puja Fee</label><br>
+                <input type="number" id="pujaFee" name="pujaFee" required><br>
+
+                <h4>Puja Slots</h4>
+                <div id="pujaSlotsContainer">
+                    <!-- Puja Slots will be added here -->
+                </div>
+                <button type="button" onclick="addPujaSlot()">Add Puja Slot</button><br><br>
+                <button type="submit">Add Puja</button>
+                </form>
+        </div>
+    </div>
+</div>
+
+<script>
+let slotIndex = 0;
+function addSlot() {
+    const container = document.getElementById('slotsContainer');
+    const slotDiv = document.createElement('div');
+    slotDiv.innerHTML = `
+        <label for="dateTime${slotIndex}">Date and Time:</label>
+        <input type="datetime-local" id="dateTime${slotIndex}" name="slots[${slotIndex}][dateTime]" required>
+        <label for="maxBookings${slotIndex}">Max Bookings:</label>
+        <input type="number" id="maxBookings${slotIndex}" name="slots[${slotIndex}][maxBookings]" required>
+        <label for="currentBookings${slotIndex}">Current Bookings:</label>
+        <input type="number" id="currentBookings${slotIndex}" name="slots[${slotIndex}][currentBookings]" required>
+        <br><br>
+    `;
+    container.appendChild(slotDiv);
+    slotIndex++;
+}
+
+// Initialize with one slot
+addSlot();
+</script>
+
+<script>
+    let pujaSlotIndex = 0;
+    
+    function addPujaSlot() {
+        const container = document.getElementById('pujaSlotsContainer');
+        const slotDiv = document.createElement('div');
+        slotDiv.innerHTML = `
+            <label for="pujaDateTime${pujaSlotIndex}">Date and Time:</label>
+            <input type="datetime-local" id="pujaDateTime${pujaSlotIndex}" name="pujaSlots[${pujaSlotIndex}][dateTime]" required>
+            <label for="pujaMaxBookings${pujaSlotIndex}">Max Bookings:</label>
+            <input type="number" id="pujaMaxBookings${pujaSlotIndex}" name="pujaSlots[${pujaSlotIndex}][maxBookings]" required>
+            <label for="pujaCurrentBookings${pujaSlotIndex}">Current Bookings:</label>
+            <input type="number" id="pujaCurrentBookings${pujaSlotIndex}" name="pujaSlots[${pujaSlotIndex}][currentBookings]" required>
+            <br><br>
+        `;
+        container.appendChild(slotDiv);
+        pujaSlotIndex++;
+    }
+    
+    window.onload = function() {
+        addSlot(); 
+        addPujaSlot(); 
+    };
+</script>
+</body>
+</html>

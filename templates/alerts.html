@@ -55,7 +55,24 @@
 </div>
 
 <div class="main-content">
-    <h2>Welcome, {{ mail }}</h2>
+    <h2>Alerts</h2>
+    <table>
+        <tr>
+            <th>Alerts</th>
+        </tr>
+        {% for alert in alerts %}
+        <tr>
+            <td>{{ alert }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Form for creating a new alert -->
+    <h3>Add New Alert</h3>
+    <form action="{{ url_for('add_alert') }}" method="post">
+        <input type="text" name="alert_message" placeholder="Enter new alert" required>
+        <button type="submit">Add Alert</button>
+    </form>
 </div>
 <script>
 </script>
