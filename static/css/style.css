@@ -196,6 +196,22 @@ body{
 .container #flip{
   display: none;
 }
+
+button {
+  width: 80%;
+  color: #fff;
+  background: #DC4F00;
+  border-radius: 6px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border: 1px solid #DC4F00; /* Ensure border-color is applied correctly */
+  font-size: 15px; /* Increase font size */
+  display: block; /* Change display to block for margin auto to work */
+  margin: 20px auto; /* Adds top & bottom margin and centers the button horizontally */
+}
+
+
 @media (max-width: 730px) {
   .container .cover{
     display: none;

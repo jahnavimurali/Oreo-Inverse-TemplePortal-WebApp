@@ -32,6 +32,12 @@ def verify_token():
         return jsonify({'success': True}), 200
     except Exception as e:
         return jsonify({'error': 'Failed to verify token', 'details': str(e)}), 500
+    
+@app.route('/signup')
+def signup():
+    global email
+    email = request.form.get('email')
+    return redirect(url_for('dashboard'))
 
 @app.route('/dashboard')
 def dashboard():
