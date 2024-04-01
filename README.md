@@ -19,7 +19,9 @@ For a detailed description and screenshots, please visit [here](https://drive.go
 ### Demo Video
 
 
-https://github.com/jahnavimurali/Oreo-Inverse-TemplePortal-WebApp/assets/109456718/cb8556a2-b694-4311-a509-c546f9658531
+
+https://github.com/jahnavimurali/Oreo-Inverse-TemplePortal-WebApp/assets/109456718/f8cc5a82-1f66-49ad-84c0-0140f0661bd6
+
 
 
 ### Instructions
