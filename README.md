@@ -16,6 +16,11 @@ This repository contains the Admin Portal Web App where authorized temple admins
 
 For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1-QQVwk3XjJTdLHLRhVBbeqZQw3E0eRXG/view?usp=sharing).
 
+### Demo Video
+
+
+https://github.com/jahnavimurali/Oreo-Inverse-TemplePortal-WebApp/assets/109456718/cb8556a2-b694-4311-a509-c546f9658531
+
 
 ### Instructions
 
