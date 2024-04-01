@@ -1,7 +1,7 @@
 # Team OreoInverse HaxPlore'24 IIT BHU, Varanasi
 
 ## *IMPORTANT*!! Our solution includes two other apps as well, please visit the following repos
-### - [Oreo Inverse Admin Portal WebApp](https://github.com/jahnavimurali/Oreo-Inverse-TemplePortal-WebApp)
+### - [Oreo Inverse User App](https://github.com/jahnavimurali/Oreo-Inverse-HaXplore-24)
 ### - [Oreo Inverse QR Scanning App](https://github.com/jahnavimurali/Oreo-Inverse-QR-Scanning-App)
 
 ## Project Vihara: Admin Portal Web App
@@ -14,7 +14,7 @@ Vihara is a modern ticketing system for seamless access to temples. Users can bo
 
 This repository contains the Admin Portal Web App where authorized temple admins may make use of the dashboard to view/add/edit alerts, updates, darshans, pujas and other services of the temple.
 
-For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1c1nilBPz3bAnFcCjztXgDxFG9jRjn_jm/view).
+For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1c1nilBPz3bAnFcCjztXgDxFG9jRjn_jm/view?usp=sharing).
 
 ### Demo Video
 
