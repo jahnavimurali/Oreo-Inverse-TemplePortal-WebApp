@@ -14,7 +14,7 @@ Vihara is a modern ticketing system for seamless access to temples. Users can bo
 
 This repository contains the Admin Portal Web App where authorized temple admins may make use of the dashboard to view/add/edit alerts, updates, darshans, pujas and other services of the temple.
 
-For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1-QQVwk3XjJTdLHLRhVBbeqZQw3E0eRXG/view?usp=sharing).
+For a detailed description and screenshots, please visit [here](https://drive.google.com/file/d/1c1nilBPz3bAnFcCjztXgDxFG9jRjn_jm/view).
 
 ### Demo Video
 
